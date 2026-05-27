@@ -653,8 +653,9 @@ project_filter = data["projects"].copy()
 if selected_year != "Todos":
     project_filter = project_filter[project_filter["Vigencia"].str.contains(selected_year, na=False)]
 
+pilar_codes = [p.split()[0] for p in selected_pilares]
+
 if not project_filter.empty:
-    pilar_codes = [p.split()[0] for p in selected_pilares]
     if pilar_codes:
         oe_col = "OE Inst."
         project_filter = project_filter[project_filter[oe_col].apply(
