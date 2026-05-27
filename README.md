@@ -2,15 +2,15 @@
 
 Dashboard interactivo para visualizar métricas de Gobierno de TI (ISO 38500) - INFIVALLE.
 
-## 🚀 Guía de Inicio Rápido
+ Guía de Inicio Rápido
 
-### Requisitos Previos
+ Requisitos Previos
 
 - Python 3.8 o superior
 - pip (gestor de paquetes de Python)
 - Git (opcional, para clonar el repositorio)
 
-### 1. Instalación del Entorno
+ 1. Instalación del Entorno
 
 ```bash
 # Clonar o descargar el repositorio
@@ -30,7 +30,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Configuración de la Base de Datos
+ 2. Configuración de la Base de Datos
 
 ```bash
 # Crear la base de datos desde el archivo Excel
@@ -51,7 +51,7 @@ La aplicación se abrirá automáticamente en `http://localhost:8501`
 
 ---
 
-## 📁 Estructura del Proyecto
+ Estructura del Proyecto
 
 ```
 dashboard_ISO38500/
@@ -71,7 +71,7 @@ dashboard_ISO38500/
 
 ---
 
-## 🔧 Comandos Útiles para Desarrolladores
+ Comandos Útiles para Desarrolladores
 
 | Comando | Descripción |
 |---------|-------------|
@@ -83,7 +83,7 @@ dashboard_ISO38500/
 
 ---
 
-## 📊 Dependencias Principales
+ Dependencias Principales
 
 - **Streamlit** - Framework web interactivo
 - **Pandas** - Procesamiento y análisis de datos
@@ -93,7 +93,7 @@ dashboard_ISO38500/
 
 ---
 
-## 🆘 Solución de Problemas
+ Solución de Problemas
 
 **Problema:** El dashboard no inicia
 - Verifica que todas las dependencias estén instaladas: `pip install -r requirements.txt`
@@ -105,6 +105,6 @@ dashboard_ISO38500/
 
 ---
 
-## 📚 Documentación Adicional
+ Documentación Adicional
 
 Para más información sobre normalización de datos, consulta [NORMALIZACION_DATOS.md](docs/NORMALIZACION_DATOS.md)
