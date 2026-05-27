@@ -653,19 +653,20 @@ project_filter = data["projects"].copy()
 if selected_year != "Todos":
     project_filter = project_filter[project_filter["Vigencia"].str.contains(selected_year, na=False)]
 
-pilar_codes = [p.split()[0] for p in selected_pilares]
-if pilar_codes:
-    oe_col = "OE Inst."
-    project_filter = project_filter[project_filter[oe_col].apply(
-        lambda x: any(pc.replace("OBJ-0", "OE-0") in str(x) for pc in pilar_codes)
-    )]
+if not project_filter.empty:
+    pilar_codes = [p.split()[0] for p in selected_pilares]
+    if pilar_codes:
+        oe_col = "OE Inst."
+        project_filter = project_filter[project_filter[oe_col].apply(
+            lambda x: any(pc.replace("OBJ-0", "OE-0") in str(x) for pc in pilar_codes)
+        )]
 
-status_map = []
-if cb_planificado:   status_map.append("Planificado")
-if cb_en_ejecucion:  status_map.append("En Ejecución")
-if cb_finalizado:    status_map.append("Finalizado")
-if status_map:
-    project_filter = project_filter[project_filter["Estado"].isin(status_map)]
+    status_map = []
+    if cb_planificado:   status_map.append("Planificado")
+    if cb_en_ejecucion:  status_map.append("En Ejecución")
+    if cb_finalizado:    status_map.append("Finalizado")
+    if status_map:
+        project_filter = project_filter[project_filter["Estado"].isin(status_map)]
 
 project_count = len(project_filter)
 avg_progress = int(project_filter["Progreso"].mean() * 100) if project_count else 0
